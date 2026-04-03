@@ -1,0 +1,136 @@
+// SPDX-License-Identifier: Apache-2.0
+export type Language = 'en' | 'es'
+
+const en: Record<string, string> = {
+  langEn: 'EN',
+  langEs: 'ES',
+
+  footerCreatedBy: 'Created by',
+  footerRole: '— University Professor',
+  footerLiveCoded: 'Live-coded for interactive ML/AI education',
+
+  heroTitle: 'Linear Models Playground',
+  heroSubtitle: 'Interactive Supervised Learning',
+  heroDesc: 'Explore the foundations of machine learning through interactive visualizations. Adjust parameters in real time and watch how linear models learn from data.',
+  heroTag1: 'Linear Regression',
+  heroTag2: 'Regularization',
+  heroTag3: 'Polynomial Fit',
+  heroTag4: 'Logistic Regression',
+
+  navLinear: 'Linear Regression',
+  navRegularization: 'Regularization',
+  navPolynomial: 'Polynomial Fit',
+  navLogistic: 'Logistic Regression',
+
+  linTitle: 'Ordinary Least Squares Regression',
+  linSubtitle: 'Fit a line that minimizes the sum of squared residuals',
+  linHint: 'Adjust the noise level to see how data dispersion affects the quality of the fitted line. OLS finds the slope and intercept that minimize MSE.',
+  linNoise: 'Noise',
+  linSlope: 'Slope',
+  linIntercept: 'Intercept',
+  linMSE: 'MSE',
+  linR2: 'R²',
+  linFittedLine: 'Fitted Line',
+  linDataPoints: 'Data Points',
+
+  regTitle: 'Ridge & Lasso Regularization',
+  regSubtitle: 'Penalize large coefficients to prevent overfitting',
+  regHint: 'As λ increases, coefficients shrink. Ridge smoothly approaches zero (L2 penalty). Lasso drives coefficients to exactly zero — performing feature selection (L1 penalty).',
+  regLambda: 'Regularization strength λ',
+  regRidge: 'Ridge (L2)',
+  regLasso: 'Lasso (L1)',
+  regCoefficients: 'Coefficients',
+  regShrinkage: 'Shrinkage Path',
+
+  polyTitle: 'Polynomial Regression & Bias-Variance Tradeoff',
+  polySubtitle: 'Increase model complexity and observe underfitting vs overfitting',
+  polyHint: 'Degree 1 underfits (high bias). Degree 3–4 generalizes well. Degree 8+ overfits: train MSE drops but test MSE spikes — the classic bias-variance tradeoff.',
+  polyDegree: 'Polynomial Degree',
+  polyTrain: 'Train MSE',
+  polyTest: 'Test MSE',
+  polyMSE: 'MSE vs Degree',
+  polyOverfit: 'Overfitting',
+  polyUnderfit: 'Underfitting',
+
+  logTitle: 'Logistic Regression',
+  logSubtitle: 'Binary classification via the sigmoid function',
+  logHint: 'The sigmoid squashes any real number to [0,1]. Move the threshold slider to change the decision boundary. Observe how accuracy changes.',
+  logThreshold: 'Decision Threshold',
+  logSigmoid: 'Sigmoid Function',
+  logDecisionBoundary: 'Decision Boundary',
+  logAccuracy: 'Accuracy',
+
+  refTitle: 'References & Further Reading',
+  refBook1: 'James, G. et al. — An Introduction to Statistical Learning (ISL), 2nd Ed.',
+  refBook2: 'Bishop, C. — Pattern Recognition and Machine Learning',
+  refLink1: 'scikit-learn: Linear Models documentation',
+  refLink2: 'Hastie et al. — The Elements of Statistical Learning (free PDF)',
+}
+
+const es: Record<string, string> = {
+  langEn: 'EN',
+  langEs: 'ES',
+
+  footerCreatedBy: 'Creado por',
+  footerRole: '— Profesor Universitario',
+  footerLiveCoded: 'Desarrollado en vivo para educación interactiva en ML/IA',
+
+  heroTitle: 'Playground de Modelos Lineales',
+  heroSubtitle: 'Aprendizaje Supervisado Interactivo',
+  heroDesc: 'Explora los fundamentos del aprendizaje automático a través de visualizaciones interactivas. Ajusta los parámetros en tiempo real y observa cómo los modelos lineales aprenden de los datos.',
+  heroTag1: 'Regresión Lineal',
+  heroTag2: 'Regularización',
+  heroTag3: 'Ajuste Polinomial',
+  heroTag4: 'Regresión Logística',
+
+  navLinear: 'Regresión Lineal',
+  navRegularization: 'Regularización',
+  navPolynomial: 'Ajuste Polinomial',
+  navLogistic: 'Regresión Logística',
+
+  linTitle: 'Regresión por Mínimos Cuadrados Ordinarios',
+  linSubtitle: 'Ajusta una línea que minimiza la suma de residuos al cuadrado',
+  linHint: 'Ajusta el nivel de ruido para ver cómo la dispersión de los datos afecta la calidad de la línea ajustada. OLS encuentra la pendiente e intercepto que minimizan el MSE.',
+  linNoise: 'Ruido',
+  linSlope: 'Pendiente',
+  linIntercept: 'Intercepto',
+  linMSE: 'ECM',
+  linR2: 'R²',
+  linFittedLine: 'Línea Ajustada',
+  linDataPoints: 'Datos',
+
+  regTitle: 'Regularización Ridge y Lasso',
+  regSubtitle: 'Penaliza coeficientes grandes para evitar el sobreajuste',
+  regHint: 'A medida que λ aumenta, los coeficientes se reducen. Ridge se aproxima suavemente a cero (penalidad L2). Lasso lleva los coeficientes exactamente a cero — realizando selección de características (penalidad L1).',
+  regLambda: 'Fuerza de regularización λ',
+  regRidge: 'Ridge (L2)',
+  regLasso: 'Lasso (L1)',
+  regCoefficients: 'Coeficientes',
+  regShrinkage: 'Trayectoria de Contracción',
+
+  polyTitle: 'Regresión Polinomial y Compromiso Sesgo-Varianza',
+  polySubtitle: 'Aumenta la complejidad del modelo y observa subajuste vs sobreajuste',
+  polyHint: 'Grado 1 subajusta (alto sesgo). Grado 3–4 generaliza bien. Grado 8+ sobreajusta: el ECM de entrenamiento cae pero el ECM de prueba sube — el clásico compromiso sesgo-varianza.',
+  polyDegree: 'Grado Polinomial',
+  polyTrain: 'ECM Entrenamiento',
+  polyTest: 'ECM Prueba',
+  polyMSE: 'ECM vs Grado',
+  polyOverfit: 'Sobreajuste',
+  polyUnderfit: 'Subajuste',
+
+  logTitle: 'Regresión Logística',
+  logSubtitle: 'Clasificación binaria mediante la función sigmoide',
+  logHint: 'La sigmoide comprime cualquier número real a [0,1]. Mueve el umbral para cambiar la frontera de decisión. Observa cómo cambia la exactitud.',
+  logThreshold: 'Umbral de Decisión',
+  logSigmoid: 'Función Sigmoide',
+  logDecisionBoundary: 'Frontera de Decisión',
+  logAccuracy: 'Exactitud',
+
+  refTitle: 'Referencias y Lecturas Adicionales',
+  refBook1: 'James, G. et al. — An Introduction to Statistical Learning (ISL), 2ª Ed.',
+  refBook2: 'Bishop, C. — Pattern Recognition and Machine Learning',
+  refLink1: 'scikit-learn: Documentación de Modelos Lineales',
+  refLink2: 'Hastie et al. — The Elements of Statistical Learning (PDF gratuito)',
+}
+
+export const translations: Record<Language, Record<string, string>> = { en, es }
