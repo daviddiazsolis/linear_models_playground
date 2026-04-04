@@ -6,7 +6,7 @@ const en: Record<string, string> = {
   langEs: 'ES',
 
   footerCreatedBy: 'Created by',
-  footerRole: '— University Professor',
+  footerRole: 'Ph.D.',
   footerLiveCoded: 'Live-coded for interactive ML/AI education',
 
   heroTitle: 'Linear Models Playground',
@@ -65,6 +65,11 @@ const en: Record<string, string> = {
   refBook2: 'Bishop, C. — Pattern Recognition and Machine Learning',
   refLink1: 'scikit-learn: Linear Models documentation',
   refLink2: 'Hastie et al. — The Elements of Statistical Learning (free PDF)',
+
+  nbTitle: 'Notebooks & Colab',
+  nbSubtitle: 'Companion Jupyter notebooks for each topic. Open directly in Google Colab — no installation required.',
+  nbLinearTitle: 'Linear & Logistic Regression',
+  nbLinearDesc: 'OLS regression, Ridge/Lasso regularization, polynomial fitting, and logistic regression with sklearn. Includes coefficient analysis and visualizations.',
 }
 
 const es: Record<string, string> = {
@@ -72,7 +77,7 @@ const es: Record<string, string> = {
   langEs: 'ES',
 
   footerCreatedBy: 'Creado por',
-  footerRole: '— Profesor Universitario',
+  footerRole: 'Ph.D.',
   footerLiveCoded: 'Desarrollado en vivo para educación interactiva en ML/IA',
 
   heroTitle: 'Playground de Modelos Lineales',
@@ -131,6 +136,11 @@ const es: Record<string, string> = {
   refBook2: 'Bishop, C. — Pattern Recognition and Machine Learning',
   refLink1: 'scikit-learn: Documentación de Modelos Lineales',
   refLink2: 'Hastie et al. — The Elements of Statistical Learning (PDF gratuito)',
+
+  nbTitle: 'Notebooks y Colab',
+  nbSubtitle: 'Notebooks de Jupyter como complemento para cada tema. Ábrelos directamente en Google Colab — sin instalación.',
+  nbLinearTitle: 'Regresión Lineal y Logística',
+  nbLinearDesc: 'Regresión OLS, regularización Ridge/Lasso, ajuste polinomial y regresión logística con sklearn. Incluye análisis de coeficientes y visualizaciones.',
 }
 
 export const translations: Record<Language, Record<string, string>> = { en, es }

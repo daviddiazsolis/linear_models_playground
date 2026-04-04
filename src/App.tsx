@@ -10,6 +10,7 @@ import Regularization from './components/Regularization'
 import PolynomialRegression from './components/PolynomialRegression'
 import LogisticRegression from './components/LogisticRegression'
 import References from './components/References'
+import NotebooksSection from './components/NotebooksSection'
 import Footer from './components/Footer'
 
 const SECTIONS = [
@@ -57,6 +58,7 @@ function AppInner() {
         <Regularization />
         <PolynomialRegression />
         <LogisticRegression />
+        <NotebooksSection />
         <References />
       </main>
       <Footer />
