@@ -7,7 +7,7 @@ const en: Record<string, string> = {
 
   footerCreatedBy: 'Created by',
   footerRole: 'Ph.D.',
-  footerLiveCoded: 'Live-coded for interactive ML/AI education',
+  footerLiveCoded: 'Live-coded with the help of generative AI for interactive ML/AI education',
 
   heroTitle: 'Linear Models Playground',
   heroSubtitle: 'Interactive Supervised Learning',
@@ -78,7 +78,7 @@ const es: Record<string, string> = {
 
   footerCreatedBy: 'Creado por',
   footerRole: 'Ph.D.',
-  footerLiveCoded: 'Desarrollado en vivo para educación interactiva en ML/IA',
+  footerLiveCoded: 'Desarrollado en vivo con la ayuda de IA generativa para educación interactiva en ML/IA',
 
   heroTitle: 'Playground de Modelos Lineales',
   heroSubtitle: 'Aprendizaje Supervisado Interactivo',
