@@ -222,7 +222,7 @@ export default function ManualFit() {
 
         <div className="mt-10">
           <h3 className="text-zinc-300 text-sm font-semibold mb-3">{t('metricsExplain')}</h3>
-          <MetricCards metrics={['ssr', 'mse', 'rmse', 'mae']} />
+          <MetricCards metrics={['ssr', 'mse', 'rmse', 'mae', 'r2']} />
         </div>
       </motion.div>
     </section>

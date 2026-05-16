@@ -23,7 +23,6 @@ import {
   mae,
   rSquared,
 } from '../utils/linearAlgebra'
-import MetricCards from './MetricCards'
 
 const TRUE_SLOPE = 2
 const TRUE_INTERCEPT = 1
@@ -188,11 +187,6 @@ export default function LinearRegression() {
               </ResponsiveContainer>
             </div>
           </div>
-        </div>
-
-        <div className="mt-10">
-          <h3 className="text-zinc-300 text-sm font-semibold mb-3">{t('metricsExplain')}</h3>
-          <MetricCards metrics={['ssr', 'mse', 'rmse', 'mae', 'r2']} />
         </div>
       </motion.div>
     </section>
