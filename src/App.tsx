@@ -5,24 +5,24 @@ import { ThemeProvider } from './context/ThemeContext'
 import { useLanguage } from './context/LanguageContext'
 import TranslationWidget from './components/TranslationWidget'
 import Hero from './components/Hero'
+import ManualFit from './components/ManualFit'
 import LinearRegression from './components/LinearRegression'
-import Regularization from './components/Regularization'
 import PolynomialRegression from './components/PolynomialRegression'
-import LogisticRegression from './components/LogisticRegression'
+import Regularization from './components/Regularization'
 import References from './components/References'
 import NotebooksSection from './components/NotebooksSection'
 import Footer from './components/Footer'
 
 const SECTIONS = [
+  { id: 'manual', navKey: 'navManual' },
   { id: 'linear', navKey: 'navLinear' },
-  { id: 'regularization', navKey: 'navRegularization' },
   { id: 'polynomial', navKey: 'navPolynomial' },
-  { id: 'logistic', navKey: 'navLogistic' },
+  { id: 'regularization', navKey: 'navRegularization' },
 ] as const
 
 function SectionNav() {
   const { t } = useLanguage()
-  const [active, setActive] = useState('linear')
+  const [active, setActive] = useState('manual')
   useEffect(() => {
     const observers: IntersectionObserver[] = []
     SECTIONS.forEach(({ id }) => {
@@ -54,10 +54,10 @@ function AppInner() {
       <Hero />
       <SectionNav />
       <main>
+        <ManualFit />
         <LinearRegression />
-        <Regularization />
         <PolynomialRegression />
-        <LogisticRegression />
+        <Regularization />
         <NotebooksSection />
         <References />
       </main>

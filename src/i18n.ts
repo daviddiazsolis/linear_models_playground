@@ -9,18 +9,30 @@ const en: Record<string, string> = {
   footerRole: 'Ph.D.',
   footerLiveCoded: 'Live-coded with the help of generative AI for interactive ML/AI education',
 
-  heroTitle: 'Linear Models Playground',
-  heroSubtitle: 'Interactive Supervised Learning',
-  heroDesc: 'Explore the foundations of machine learning through interactive visualizations. Adjust parameters in real time and watch how linear models learn from data.',
-  heroTag1: 'Linear Regression',
-  heroTag2: 'Regularization',
+  heroTitle: 'Supervised Regression Playground',
+  heroSubtitle: 'From manual intuition to closed-form regression',
+  heroDesc: 'Start by trying lines by hand on a scatter plot, then watch OLS solve the same problem analytically. Extend to polynomial fits and tame complexity with regularization.',
+  heroTag1: 'Manual Fit',
+  heroTag2: 'Linear Regression',
   heroTag3: 'Polynomial Fit',
-  heroTag4: 'Logistic Regression',
+  heroTag4: 'Regularization',
 
+  navManual: 'Compare Lines',
   navLinear: 'Linear Regression',
-  navRegularization: 'Regularization',
   navPolynomial: 'Polynomial Fit',
-  navLogistic: 'Logistic Regression',
+  navRegularization: 'Regularization',
+
+  mfTitle: 'Compare Lines — Visual Intuition',
+  mfSubtitle: 'Pick β₀ and β₁ by hand. Which line fits best?',
+  mfHint: 'Move β₀ (intercept) and β₁ (slope) until the blue line looks like the best fit. Watch SSR and MSE drop as you improve. Add noise or change the sample size to see how those affect the picture. Hint: the true line is somewhere around β₀ = 1, β₁ = 2.',
+  mfIntercept: 'intercept',
+  mfSlope: 'slope',
+  mfPoints: 'Sample size (n)',
+  mfNoise: 'Noise',
+  mfRegenerate: 'Regenerate data',
+  mfSSR: 'SSR',
+  mfMSE: 'MSE',
+  mfYourLine: 'Your line',
 
   linTitle: 'Ordinary Least Squares Regression',
   linSubtitle: 'Fit a line that minimizes the sum of squared residuals',
@@ -52,14 +64,6 @@ const en: Record<string, string> = {
   polyOverfit: 'Overfitting',
   polyUnderfit: 'Underfitting',
 
-  logTitle: 'Logistic Regression',
-  logSubtitle: 'Binary classification via the sigmoid function',
-  logHint: 'The sigmoid squashes any real number to [0,1]. Move the threshold slider to change the decision boundary. Observe how accuracy changes.',
-  logThreshold: 'Decision Threshold',
-  logSigmoid: 'Sigmoid Function',
-  logDecisionBoundary: 'Decision Boundary',
-  logAccuracy: 'Accuracy',
-
   refTitle: 'References & Further Reading',
   refBook1: 'James, G. et al. — An Introduction to Statistical Learning (ISL), 2nd Ed.',
   refBook2: 'Bishop, C. — Pattern Recognition and Machine Learning',
@@ -68,8 +72,8 @@ const en: Record<string, string> = {
 
   nbTitle: 'Notebooks & Colab',
   nbSubtitle: 'Companion Jupyter notebooks for each topic. Open directly in Google Colab — no installation required.',
-  nbLinearTitle: 'Linear & Logistic Regression',
-  nbLinearDesc: 'OLS regression, Ridge/Lasso regularization, polynomial fitting, and logistic regression with sklearn. Includes coefficient analysis and visualizations.',
+  nbLinearTitle: 'Linear Regression Toolkit',
+  nbLinearDesc: 'OLS regression, Ridge/Lasso regularization and polynomial fitting with sklearn. Includes coefficient analysis and visualizations.',
 }
 
 const es: Record<string, string> = {
@@ -80,18 +84,30 @@ const es: Record<string, string> = {
   footerRole: 'Ph.D.',
   footerLiveCoded: 'Desarrollado en vivo con la ayuda de IA generativa para educación interactiva en ML/IA',
 
-  heroTitle: 'Playground de Modelos Lineales',
-  heroSubtitle: 'Aprendizaje Supervisado Interactivo',
-  heroDesc: 'Explora los fundamentos del aprendizaje automático a través de visualizaciones interactivas. Ajusta los parámetros en tiempo real y observa cómo los modelos lineales aprenden de los datos.',
-  heroTag1: 'Regresión Lineal',
-  heroTag2: 'Regularización',
+  heroTitle: 'Playground de Regresión Supervisada',
+  heroSubtitle: 'De la intuición manual a la regresión por fórmula cerrada',
+  heroDesc: 'Comienza probando rectas a mano sobre un diagrama de dispersión, luego observa cómo OLS resuelve el mismo problema analíticamente. Extiende la idea a ajustes polinomiales y controla la complejidad con regularización.',
+  heroTag1: 'Ajuste Manual',
+  heroTag2: 'Regresión Lineal',
   heroTag3: 'Ajuste Polinomial',
-  heroTag4: 'Regresión Logística',
+  heroTag4: 'Regularización',
 
+  navManual: 'Comparar Líneas',
   navLinear: 'Regresión Lineal',
-  navRegularization: 'Regularización',
   navPolynomial: 'Ajuste Polinomial',
-  navLogistic: 'Regresión Logística',
+  navRegularization: 'Regularización',
+
+  mfTitle: 'Comparar Líneas — Intuición Visual',
+  mfSubtitle: 'Elige β₀ y β₁ a mano. ¿Cuál es la mejor recta?',
+  mfHint: 'Mueve β₀ (intercepto) y β₁ (pendiente) hasta que la línea azul parezca el mejor ajuste. Mira cómo SSR y ECM bajan cuando mejoras. Cambia el ruido o el tamaño muestral para ver cómo afectan la figura. Pista: la recta verdadera está cerca de β₀ = 1, β₁ = 2.',
+  mfIntercept: 'intercepto',
+  mfSlope: 'pendiente',
+  mfPoints: 'Tamaño muestral (n)',
+  mfNoise: 'Ruido',
+  mfRegenerate: 'Regenerar datos',
+  mfSSR: 'SCR',
+  mfMSE: 'ECM',
+  mfYourLine: 'Tu línea',
 
   linTitle: 'Regresión por Mínimos Cuadrados Ordinarios',
   linSubtitle: 'Ajusta una línea que minimiza la suma de residuos al cuadrado',
@@ -123,14 +139,6 @@ const es: Record<string, string> = {
   polyOverfit: 'Sobreajuste',
   polyUnderfit: 'Subajuste',
 
-  logTitle: 'Regresión Logística',
-  logSubtitle: 'Clasificación binaria mediante la función sigmoide',
-  logHint: 'La sigmoide comprime cualquier número real a [0,1]. Mueve el umbral para cambiar la frontera de decisión. Observa cómo cambia la exactitud.',
-  logThreshold: 'Umbral de Decisión',
-  logSigmoid: 'Función Sigmoide',
-  logDecisionBoundary: 'Frontera de Decisión',
-  logAccuracy: 'Exactitud',
-
   refTitle: 'Referencias y Lecturas Adicionales',
   refBook1: 'James, G. et al. — An Introduction to Statistical Learning (ISL), 2ª Ed.',
   refBook2: 'Bishop, C. — Pattern Recognition and Machine Learning',
@@ -139,8 +147,8 @@ const es: Record<string, string> = {
 
   nbTitle: 'Notebooks y Colab',
   nbSubtitle: 'Notebooks de Jupyter como complemento para cada tema. Ábrelos directamente en Google Colab — sin instalación.',
-  nbLinearTitle: 'Regresión Lineal y Logística',
-  nbLinearDesc: 'Regresión OLS, regularización Ridge/Lasso, ajuste polinomial y regresión logística con sklearn. Incluye análisis de coeficientes y visualizaciones.',
+  nbLinearTitle: 'Caja de herramientas de Regresión Lineal',
+  nbLinearDesc: 'Regresión OLS, regularización Ridge/Lasso y ajuste polinomial con sklearn. Incluye análisis de coeficientes y visualizaciones.',
 }
 
 export const translations: Record<Language, Record<string, string>> = { en, es }
