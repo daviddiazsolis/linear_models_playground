@@ -13,7 +13,8 @@ import {
 } from 'recharts'
 import { RotateCcw } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
-import { generateLinearData, linspace, mse } from '../utils/linearAlgebra'
+import { generateLinearData, linspace, mse, rmse, mae } from '../utils/linearAlgebra'
+import MetricCards from './MetricCards'
 
 const TRUE_SLOPE = 2
 const TRUE_INTERCEPT = 1
@@ -43,7 +44,11 @@ export default function ManualFit() {
     const yPred = data.map(d => beta0 + beta1 * d.x)
     const m = mse(yTrue, yPred)
     const ssr = yTrue.reduce((acc, y, i) => acc + (y - yPred[i]) ** 2, 0)
-    return { data, linePoints, metrics: { mse: m, ssr } }
+    return {
+      data,
+      linePoints,
+      metrics: { ssr, mse: m, rmse: rmse(yTrue, yPred), mae: mae(yTrue, yPred) },
+    }
   }, [nPoints, noise, beta0, beta1, seed])
 
   return (
@@ -67,6 +72,8 @@ export default function ManualFit() {
             { label: 'β₁', value: beta1.toFixed(2) },
             { label: t('mfSSR'), value: metrics.ssr.toFixed(2) },
             { label: t('mfMSE'), value: metrics.mse.toFixed(3) },
+            { label: t('mfRMSE'), value: metrics.rmse.toFixed(3) },
+            { label: t('mfMAE'), value: metrics.mae.toFixed(3) },
           ].map(({ label, value }) => (
             <div
               key={label}
@@ -211,6 +218,11 @@ export default function ManualFit() {
               </ScatterChart>
             </ResponsiveContainer>
           </div>
+        </div>
+
+        <div className="mt-10">
+          <h3 className="text-zinc-300 text-sm font-semibold mb-3">{t('metricsExplain')}</h3>
+          <MetricCards metrics={['ssr', 'mse', 'rmse', 'mae']} />
         </div>
       </motion.div>
     </section>

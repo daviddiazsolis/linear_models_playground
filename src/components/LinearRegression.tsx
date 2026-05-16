@@ -19,8 +19,11 @@ import {
   fitOLS,
   linspace,
   mse,
+  rmse,
+  mae,
   rSquared,
 } from '../utils/linearAlgebra'
+import MetricCards from './MetricCards'
 
 const TRUE_SLOPE = 2
 const TRUE_INTERCEPT = 1
@@ -47,6 +50,8 @@ export default function LinearRegression() {
     const yPred = data.map(d => fit.slope * d.x + fit.intercept)
     const metrics = {
       mse: mse(yTrue, yPred),
+      rmse: rmse(yTrue, yPred),
+      mae: mae(yTrue, yPred),
       r2: rSquared(yTrue, yPred),
     }
     const xs = linspace(-3, 3, 60)
@@ -74,6 +79,8 @@ export default function LinearRegression() {
             { label: t('linSlope'), value: fit.slope.toFixed(3) },
             { label: t('linIntercept'), value: fit.intercept.toFixed(3) },
             { label: t('linMSE'), value: metrics.mse.toFixed(3) },
+            { label: 'RMSE', value: metrics.rmse.toFixed(3) },
+            { label: 'MAE', value: metrics.mae.toFixed(3) },
             { label: t('linR2'), value: metrics.r2.toFixed(3) },
           ].map(({ label, value }) => (
             <div
@@ -112,14 +119,6 @@ export default function LinearRegression() {
               <p className="text-zinc-500 text-xs leading-relaxed mt-2">
                 OLS minimizes the sum of squared residuals. The closed-form solution exists when XᵀX is invertible.
               </p>
-            </div>
-
-            <div className="rounded-xl bg-zinc-800/40 border border-zinc-700/30 p-4">
-              <p className="text-zinc-300 text-xs font-semibold mb-2 uppercase tracking-wide">What do they mean?</p>
-              <ul className="text-zinc-500 text-xs space-y-1 leading-relaxed">
-                <li><span className="text-zinc-300">MSE</span> — mean squared error, lower is better</li>
-                <li><span className="text-zinc-300">R²</span> — proportion of variance explained (1 = perfect)</li>
-              </ul>
             </div>
 
             <p className="text-zinc-500 text-xs italic">{t('linHint')}</p>
@@ -189,6 +188,11 @@ export default function LinearRegression() {
               </ResponsiveContainer>
             </div>
           </div>
+        </div>
+
+        <div className="mt-10">
+          <h3 className="text-zinc-300 text-sm font-semibold mb-3">{t('metricsExplain')}</h3>
+          <MetricCards metrics={['ssr', 'mse', 'rmse', 'mae', 'r2']} />
         </div>
       </motion.div>
     </section>

@@ -50,6 +50,17 @@ export function mse(yTrue: number[], yPred: number[]): number {
   return sum / n
 }
 
+export function rmse(yTrue: number[], yPred: number[]): number {
+  return Math.sqrt(mse(yTrue, yPred))
+}
+
+export function mae(yTrue: number[], yPred: number[]): number {
+  const n = yTrue.length
+  let sum = 0
+  for (let i = 0; i < n; i++) sum += Math.abs(yTrue[i] - yPred[i])
+  return sum / n
+}
+
 export function rSquared(yTrue: number[], yPred: number[]): number {
   const mean = yTrue.reduce((a, b) => a + b, 0) / yTrue.length
   const ssTot = yTrue.reduce((a, y) => a + (y - mean) ** 2, 0)
